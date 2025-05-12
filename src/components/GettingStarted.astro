@@ -1,0 +1,125 @@
+<section id="getting-started" class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl font-bold mb-6">Getting Started</h2>
+        <p class="text-xl text-gray-600">
+          Set up your own Malbox instance in a few simple steps.
+        </p>
+      </div>
+  
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div>
+          <div class="p-8 rounded-xl shadow-md">
+            <h3 class="text-2xl font-semibold mb-6">Prerequisites</h3>
+            <ul class="space-y-4">
+              <li class="flex">
+                <div class="flex-shrink-0 mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-green-500">
+                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg">Rust 1.81.0+</h4>
+                  <p class="text-gray-600">The stable Rust compiler and toolchain</p>
+                </div>
+              </li>
+              <li class="flex">
+                <div class="flex-shrink-0 mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-green-500">
+                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg">PostgreSQL 13+</h4>
+                  <p class="text-gray-600">For database storage</p>
+                </div>
+              </li>
+              <li class="flex">
+                <div class="flex-shrink-0 mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-green-500">
+                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg">Virtualization Provider</h4>
+                  <p class="text-gray-600">One of: KVM, VMware, or VirtualBox</p>
+                </div>
+              </li>
+            </ul>
+  
+            <div class="mt-8">
+              <h3 class="text-2xl font-semibold mb-6">Quick Install</h3>
+              <div class="bg-gray-900 text-gray-100 p-4 rounded-md font-mono text-sm">
+                <pre><code>git clone https://github.com/DualHorizon/malbox.git
+  cd malbox
+  
+  # Configure
+  cp configuration/malbox.example.toml configuration/malbox.toml
+  $EDITOR configuration/malbox.toml
+  
+  # Build and Run
+  cargo build --release
+  cargo run --release</code></pre>
+              </div>
+              <p class="mt-4 text-gray-600">For a more detailed setup guide, check out our <a href="https://docs.malbox.io/installation" class="text-orange-600 hover:text-orange-700 underline">Installation Documentation</a>.</p>
+            </div>
+          </div>
+        </div>
+  
+        <div>
+          <div class="p-8 rounded-xl shadow-md">
+            <h3 class="text-2xl font-semibold mb-6">Docker Support</h3>
+            <p class="text-gray-600 mb-6">
+              Malbox also provides Docker images for quick deployment without dealing with dependencies.
+            </p>
+            <div class="bg-gray-900 text-gray-100 p-4 rounded-md font-mono text-sm mb-8">
+              <pre><code># Pull official image
+  docker pull malbox/malbox:latest
+  
+  # Start with docker-compose
+  wget https://raw.githubusercontent.com/DualHorizon/malbox/main/docker-compose.yml
+  docker-compose up -d</code></pre>
+            </div>
+  
+            <h3 class="text-2xl font-semibold mb-6">Configuration</h3>
+            <p class="text-gray-600 mb-6">
+              Edit the configuration file to customize Malbox for your environment.
+            </p>
+  
+            <div class="bg-gray-900 text-gray-100 p-4 rounded-md font-mono text-sm overflow-auto">
+              <pre><code>[http]
+  host = "127.0.0.1"
+  port = 5000
+  
+  [database]
+  host = "postgresql://postgres:password@localhost/malbox_db"
+  
+  [infrastructure]
+  provider = "vmware"  # "kvm", "virtualbox"
+  environment = "dev"
+  
+  [analysis]
+  timeout = 300
+  max_vms = 10
+  default_profile = "default/linux"</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="bg-gradient-to-r from-orange-600 to-orange-700 rounded-xl p-8 text-white text-center">
+        <h3 class="text-2xl font-semibold mb-4">Ready to start analyzing?</h3>
+        <p class="text-lg mb-6">
+          Get started with Malbox today and enhance your malware analysis capabilities.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <a href="https://github.com/DualHorizon/malbox" class="text-orange-600 hover:bg-orange-50 transition font-medium py-3 px-6 rounded-md">
+            GitHub Repository
+          </a>
+          <a href="https://docs.malbox.io" class="border border-white text-white hover:hover:text-orange-600 transition font-medium py-3 px-6 rounded-md">
+            Documentation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
