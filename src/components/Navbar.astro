@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import Logo from "../assets/malbox-logo.svg";
 ---
 
 <header class="fixed w-full backdrop-blur-md z-50 border-b border-gray-800">
@@ -8,7 +9,7 @@
   >
     <!-- Logo and name -->
     <div class="flex items-center space-x-3">
-      <img src="/malbox-logo.svg" alt="Malbox Logo" class="h-9 w-9" />
+      <Image src={Logo} alt="Malbox Logo" class="h-9 w-9" />
       <span class="font-bold text-2xl text-white">Malbox</span>
     </div>
 
@@ -19,31 +20,36 @@
           <a
             href="#features"
             class="text-gray-300 hover:text-blue-400 transition text-lg"
-            >Features</a>
+            >Features</a
+          >
         </li>
         <li>
           <a
             href="#plugins"
             class="text-gray-300 hover:text-blue-400 transition text-lg"
-            >Plugins</a>
+            >Plugins</a
+          >
         </li>
         <li>
           <a
             href="#architecture"
             class="text-gray-300 hover:text-blue-400 transition text-lg"
-            >Architecture</a>
+            >Architecture</a
+          >
         </li>
         <li>
           <a
             href="#getting-started"
             class="text-gray-300 hover:text-blue-400 transition text-lg"
-            >Getting Started</a>
+            >Getting Started</a
+          >
         </li>
         <li>
           <a
             href="#community"
             class="text-gray-300 hover:text-blue-400 transition text-lg"
-            >Community</a>
+            >Community</a
+          >
         </li>
       </ul>
     </nav>
@@ -96,31 +102,36 @@
           <a
             href="#features"
             class="block py-2 text-gray-300 hover:text-blue-400 transition text-lg"
-            >Features</a>
+            >Features</a
+          >
         </li>
         <li>
           <a
             href="#plugins"
             class="block py-2 text-gray-300 hover:text-blue-400 transition text-lg"
-            >Plugins</a>
+            >Plugins</a
+          >
         </li>
         <li>
           <a
             href="#architecture"
             class="block py-2 text-gray-300 hover:text-blue-400 transition text-lg"
-            >Architecture</a>
+            >Architecture</a
+          >
         </li>
         <li>
           <a
             href="#getting-started"
             class="block py-2 text-gray-300 hover:text-blue-400 transition text-lg"
-            >Getting Started</a>
+            >Getting Started</a
+          >
         </li>
         <li>
           <a
             href="#community"
             class="block py-2 text-gray-300 hover:text-blue-400 transition text-lg"
-            >Community</a>
+            >Community</a
+          >
         </li>
       </ul>
     </div>

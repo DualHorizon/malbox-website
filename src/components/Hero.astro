@@ -1,3 +1,7 @@
+---
+import { Image } from "astro:assets";
+import HeroImage from "../assets/malbox-hero.png";
+---
 <section class="relative pb-20">
     <div class="container mx-auto px-4 relative z-10">
       <div class="flex flex-col md:flex-row items-center pt-12">
@@ -16,7 +20,7 @@
               Get Started
             </a>
             <a
-              href="https://docs.malbox.io"
+              href="#"
               class="border border-gray-700 bg-gray-800/50 hover:bg-gray-800 hover:border-blue-500/50 text-gray-300 font-medium py-3 px-6 rounded-md transition text-center"
             >
               Documentation
@@ -26,7 +30,7 @@
         <div class="md:w-1/2 mt-12 md:mt-0">
           <div class="relative">
             <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-blue-600/20 rounded-lg blur-xl"></div>
-            <img src="/malbox-hero.png" alt="Malbox Dashboard" class="relative w-full shadow-2xl rounded-lg border border-gray-700 glassmorphism" />
+            <Image src={HeroImage} alt="Malbox Dashboard" class="relative w-full shadow-2xl rounded-lg border border-gray-700 glassmorphism"/>
             
             <!-- Floating decorative elements -->
             <div class="absolute -top-6 -right-6 w-12 h-12 bg-blue-500/20 rounded-full blur-xl"></div>
